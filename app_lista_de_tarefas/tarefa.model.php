@@ -12,6 +12,9 @@ class Tarefa {
 
     public function __set($atributo, $valor){
         $this->$atributo = $valor;
+        
+        //retorna o próprio objeto instanciado
+        return $this;
     }
 }
 
