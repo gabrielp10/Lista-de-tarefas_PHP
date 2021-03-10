@@ -73,6 +73,7 @@ require_once 'tarefa_controller.php';
 						<li class="list-group-item active"><a href="index.php">Tarefas pendentes</a></li>
 						<li class="list-group-item"><a href="nova_tarefa.php">Nova tarefa</a></li>
 						<li class="list-group-item"><a href="todas_tarefas.php">Todas tarefas</a></li>
+						<li class="list-group-item"><a href="tarefas_realizadas.php">Tarefas realizadas</a></li>
 					</ul>
 				</div>
 

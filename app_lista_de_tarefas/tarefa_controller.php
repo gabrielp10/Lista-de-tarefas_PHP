@@ -39,6 +39,8 @@
 
 			if(isset($_GET['pag']) && $_GET['pag'] == 'index') {
 				header('location: index.php');
+			}else if (($_GET['pag']) && $_GET['pag'] == 'realizadas') {
+				header('location: tarefas_realizadas.php');
 			}else{
 				header('location: todas_tarefas.php');
 			}
@@ -57,6 +59,8 @@
 
 		if(isset($_GET['pag']) && $_GET['pag'] == 'index') {
 			header('location: index.php');
+		}else if (($_GET['pag']) && $_GET['pag'] == 'realizadas') {
+			header('location: tarefas_realizadas.php');
 		}else{
 			header('location: todas_tarefas.php');
 		}
@@ -74,6 +78,27 @@
 
 		if(isset($_GET['pag']) && $_GET['pag'] == 'index') {
 			header('location: index.php');
+		}else if (($_GET['pag']) && $_GET['pag'] == 'realizadas') {
+			header('location: tarefas_realizadas.php');
+		}else{
+			header('location: todas_tarefas.php');
+		}
+
+	} else if ($acao == 'marcarPendente') {
+
+		$tarefa = new Tarefa();
+		$tarefa->__set('id', $_GET['id']);
+		$tarefa->__set('id_status', 1);
+
+		$conexao = new Conexao();
+
+		$tarefaService = new TarefaService($conexao, $tarefa);
+		$tarefaService->marcarPendente();
+
+		if(isset($_GET['pag']) && $_GET['pag'] == 'index') {
+			header('location: index.php');
+		}else if (($_GET['pag']) && $_GET['pag'] == 'realizadas') {
+			header('location: tarefas_realizadas.php');
 		}else{
 			header('location: todas_tarefas.php');
 		}
@@ -86,6 +111,15 @@
 		
 		$tarefaService = new TarefaService($conexao, $tarefa);
 		$tarefas = $tarefaService->verPendentes();
+		
+	} else if ($acao == 'verRealizadas'){
+		$tarefa = new Tarefa();
+		$tarefa->__set('id_status', 2);
+
+		$conexao = new Conexao();
+
+		$tarefaService = new TarefaService($conexao, $tarefa);
+		$tarefas = $tarefaService->verRealizadas();
 	}
 
 ?>
