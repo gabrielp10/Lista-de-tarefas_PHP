@@ -2,6 +2,8 @@
     require '../app_lista_de_tarefas/tarefa.model.php';
     require '../app_lista_de_tarefas/tarefa.service.php';
     require '../app_lista_de_tarefas/conexao.php';
+	require '../app_lista_de_tarefas/Exportar.php';
+
 
 
     //se existe uma variável ação setada na super global get, ele utiliza a mesma. Se não não houver, aguardar uma variável de ação na página. 
@@ -120,6 +122,18 @@
 
 		$tarefaService = new TarefaService($conexao, $tarefa);
 		$tarefas = $tarefaService->verRealizadas();
+	} else if ($acao == 'exportar_excel'){
+		$tarefa = new Tarefa();
+		$conexao = new Conexao();
+
+		$tarefaService = new TarefaService($conexao, $tarefa);
+		$tarefas = $tarefaService->recuperar();
+
+		$exportar = new Exportar();
+
+		$exportar->excel($_GET['nomeArquivo'], $tarefa);
+
+		header('location: todas_tarefas.php');
 	}
 
 ?>

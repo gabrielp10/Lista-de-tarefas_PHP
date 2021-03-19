@@ -83,6 +83,7 @@
 
 				<div class="col-sm-9">
 					<div class="container pagina">
+					<a class="btn" href="excel?acao=exportar_excel&&nomeArquivo=Todas_Tarefas"> Exportar </a>
 						<div class="row">
 							<div class="col">
 								<h4>Todas tarefas</h4>
