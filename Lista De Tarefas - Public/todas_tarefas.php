@@ -83,7 +83,6 @@
 
 				<div class="col-sm-9">
 					<div class="container pagina">
-					<a class="btn" href="excel?acao=exportar_excel&&nomeArquivo=Todas_Tarefas"> Exportar </a>
 						<div class="row">
 							<div class="col">
 								<h4>Todas tarefas</h4>
@@ -93,6 +92,7 @@
 									<div class="row mb-3 d-flex align-items-center tarefa">
 										<div class="col-sm-9" id="tarefa_<?= $tarefa->id ?>">
 											<?= $tarefa->tarefa ?> (<?= $tarefa->status ?>)
+											<?=' - ' . $tarefa->data_cadastrado ?>
 										</div>
 										
 										<div class="col-sm-3 mt-2 d-flex justify-content-between">
@@ -102,11 +102,17 @@
 											<i class="fas fa-check-square fa-lg text-success" onclick="marcarRealizada(<?= $tarefa->id ?>)"></i>
 										</div>
 									</div>
-
 								<? } ?>
 
-
-								
+								<div class="dropdown d-flex justify-content-end">
+									<button class="btn btn-sm btn-info dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+										Exportar
+									</button>
+									<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+										<a class="dropdown-item" href="excel?acao=exportar_excel&&nomeArquivo=Todas_Tarefas">Excel</a>
+										<a class="dropdown-item" href="excel?acao=exportar_xls">XLS</a>
+									</div>
+								</div>							
 							</div>
 						</div>
 					</div>

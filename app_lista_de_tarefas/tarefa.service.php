@@ -21,7 +21,7 @@ class TarefaService {
 	public function recuperar() { #Read
 		$query = '
 			select 
-				t.id, s.status, t.tarefa 
+				t.id, s.status, t.tarefa, data_cadastrado
 			from 
 				tb_tarefas as t
 				left join tb_status as s on (t.id_status = s.id)

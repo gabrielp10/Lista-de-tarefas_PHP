@@ -131,9 +131,11 @@
 
 		$exportar = new Exportar();
 
-		$exportar->excel($_GET['nomeArquivo'], $tarefa);
+		$exportar->excel($_GET['nomeArquivo'], $tarefas);
 
 		header('location: todas_tarefas.php');
+	} else if ($acao == 'exportar_xls'){
+		echo 'Exportar XLS em breve!</a>';
 	}
 
 ?>
