@@ -26,13 +26,23 @@ li a:hover {
 }
 
 h4 {
-	color: #134bc5 !important;
+	color: rgb(29, 144, 179) !important;
 }
 
 
 selected:hover {
 	background-color: rgb(21, 21, 124);
 }
+
+excelcolor:hover {
+	background-color: #5cb85c !important;
+}
+
+csvcolor:hover {
+	background-color: #5bc0de !important;
+}
+
+
 
 /*
 .hvr-sweep-to-right {

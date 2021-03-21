@@ -1,5 +1,5 @@
 <?php
-	require_once 'navbar.php';
+	require_once 'assets/navbar.php';
 	$acao = 'recuperar';
 	require 'tarefa_controller.php';
 ?>
@@ -69,7 +69,7 @@
 </script>
 
 <html >
-	<body style="background-image: url(img/background-site.jpg)">
+	<body style="background-image: url(assets/img/background-site.jpg)">
 		<div class="container app">
 			<div class="row">
 				<div class="col-sm-3 menu">
@@ -109,8 +109,8 @@
 										Exportar
 									</button>
 									<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-										<a class="dropdown-item" href="excel?acao=exportar_excel&&nomeArquivo=Todas_Tarefas">Excel</a>
-										<a class="dropdown-item" href="excel?acao=exportar_xls">XLS</a>
+										<a class="dropdown-item d-flex justify-content-center excelcolor" href="excel?acao=exportar_excel&&nomeArquivo=Todas_Tarefas" ><i class="fas fa-file-excel"></i></i>&nbsp;Excel</a>
+										<a class="dropdown-item d-flex justify-content-center csvcolor" href="excel?acao=exportar_csv"><i class="fas fa-file-alt"></i></i>&nbsp;&nbsp;CSV</a>
 									</div>
 								</div>							
 							</div>

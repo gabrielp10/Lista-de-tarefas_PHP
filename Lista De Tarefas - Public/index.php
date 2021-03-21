@@ -1,4 +1,4 @@
-<?php require_once 'navbar.php'; 
+<?php require_once 'assets/navbar.php'; 
 $acao = 'verPendentes';
 require_once 'tarefa_controller.php';
 
@@ -65,7 +65,7 @@ require_once 'tarefa_controller.php';
 </script>
 
 <html>
-	<body style="background-image: url(img/background-site.jpg)">
+	<body style="background-image: url(assets/img/background-site.jpg)">
 		<div class="container app">
 			<div class="row">
 				<div class="col-md-3 menu">

@@ -1,11 +1,10 @@
 <?php
-    require '../app_lista_de_tarefas/tarefa.model.php';
-    require '../app_lista_de_tarefas/tarefa.service.php';
-    require '../app_lista_de_tarefas/conexao.php';
-	require '../app_lista_de_tarefas/Exportar.php';
+    require '../app_lista_de_tarefas/Models/Tarefa/Tarefa.php';
+    require '../app_lista_de_tarefas/Models/Tarefa/TarefaService.php';
+    require '../app_lista_de_tarefas/Conexao.php';
+	require '../app_lista_de_tarefas/Models/Exportar/Exportar.php';
 
-
-
+	
     //se existe uma variável ação setada na super global get, ele utiliza a mesma. Se não não houver, aguardar uma variável de ação na página. 
 	$acao = isset($_GET['acao']) ? $_GET['acao'] : $acao;
 
@@ -134,8 +133,8 @@
 		$exportar->excel($_GET['nomeArquivo'], $tarefas);
 
 		header('location: todas_tarefas.php');
-	} else if ($acao == 'exportar_xls'){
-		echo 'Exportar XLS em breve!</a>';
+	} else if ($acao == 'exportar_csv'){
+		echo '<script>alert("Exportar CSV em breve!")</script>';
 	}
 
 ?>
