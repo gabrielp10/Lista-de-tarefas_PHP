@@ -103,7 +103,7 @@
 										</div>
 									</div>
 								<? } ?>
-
+									<hr />
 								<div class="dropdown d-flex justify-content-end">
 									<button class="btn btn-sm btn-info dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 										Exportar
