@@ -14,20 +14,22 @@ class Exportar
     $html = '';
     $html .= '<table align="center"  border="1">';
     $html .= '<tr bgcolor="lightblue">';
-    $html .= '<th colspan="4" >' . substr(str_replace('_', ' ', $nomeArquivo), 0, -4) . '</th>'; //remove o .xls e substitui _ por espaço
+    $html .= '<th colspan="5" >' . substr(str_replace('_', ' ', $nomeArquivo), 0, -4) . '</th>'; //remove o .xls e substitui _ por espaço
     $html .= '</tr>';
     //cabecalho
     
     $html .= '<tr>';
-    $html .= '<td>Nº</td>';
-    $html .= '<td>Tarefa</td>';
-    $html .= '<td>Status</td>';
-    $html .= '<td>Criada em: </td>';
+    $html .= '<th>Nº</th>';
+    $html .= '<th>Tarefa</th>';
+    $html .= '<th>Status</th>';
+    $html .= '<th colspan="2">Criada em: </td>';
+    $html .= '</tr>';
     foreach($tarefas as $indice => $tarefa){
         $html .= '<tr>';
         $html .= '<td>' . $tarefa->id . '</td>';
         $html .= '<td>' . $tarefa->tarefa . '</td>';
         $html .= '<td>' .  $tarefa->status . '</td>';
+        $html .= '<td colspan="2">' .  $tarefa->data_cadastrado . '</td>';
 
     }
     $html .= '</tr>';
