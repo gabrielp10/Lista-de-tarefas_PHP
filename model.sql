@@ -20,7 +20,9 @@ SET time_zone = "+00:00";
 --
 -- Banco de dados: `php_com_pdo`
 --
+CREATE DATABASE php_com_pdo;
 
+use php_com_pdo;
 -- --------------------------------------------------------
 
 --
