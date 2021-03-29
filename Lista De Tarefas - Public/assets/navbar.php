@@ -14,7 +14,7 @@
 
 		<nav class="navbar navbar-light bg-info">
 			<div class="container">
-				<a class="navbar-brand" href="index.php">
+				<a class="navbar-brand titulo" href="index.php">
 					<img src="assets/img/tarefas.svg" width="30" height="30" class="d-inline-block align-top" alt="">
 					Gerenciador de tarefas
 				</a>
