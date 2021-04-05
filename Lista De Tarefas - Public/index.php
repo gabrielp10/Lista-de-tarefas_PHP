@@ -62,6 +62,10 @@ require_once 'tarefa_controller.php';
 	function marcarRealizada(id){
 		location.href = 'index.php?pag=index&acao=marcarRealizada&id='+id
 	}
+
+	function marcarPendente(id){
+		location.href = 'index.php?pag=index&acao=marcarPendente&id='+id
+	}
 </script>
 
 <html>
@@ -70,15 +74,15 @@ require_once 'tarefa_controller.php';
 			<div class="row">
 				<div class="col-md-3 menu">
 					<ul class="list-group">
-						<li class="list-group-item active"><a href="index.php">Tarefas pendentes</a></li>
-						<li class="list-group-item"><a href="nova_tarefa.php">Nova tarefa</a></li>
-						<li class="list-group-item"><a href="todas_tarefas.php">Todas tarefas</a></li>
-						<li class="list-group-item"><a href="tarefas_realizadas.php">Tarefas realizadas</a></li>
+						<li class="list-group-item"><a href="index.php">Tarefas pendentes</a></li>
+						<li class="list-group-item"><a href="#" onclick="requisitarPagina('nova_tarefa.php')">Nova tarefa</a></li>
+						<li class="list-group-item"><a href="#" onclick="requisitarPagina('todas_tarefas.php')" >Todas tarefas</a></li>
+						<li class="list-group-item"><a href="#" onclick="requisitarPagina('tarefas_realizadas.php')">Tarefas realizadas</a></li>
 					</ul>
 				</div>
 
 				<div class="col-md-9">
-					<div class="container pagina">
+					<div class="container pagina" id="conteudo">
 						<div class="row">
 							<div class="col">
 								<h4>Tarefas pendentes</h4>
@@ -93,6 +97,10 @@ require_once 'tarefa_controller.php';
 											<i class="fas fa-trash-alt fa-lg text-danger" onclick="remover(<?= $tarefa->id ?>)"></i>
 											<i class="fas fa-edit fa-lg text-info" onclick="editar(<?= $tarefa->id ?>, '<?= $tarefa->tarefa ?>')"></i>
 											<i class="fas fa-check-square fa-lg text-success" onclick="marcarRealizada(<?= $tarefa->id ?>)"></i>
+										</div>
+
+										<div>
+										
 										</div>
 									</div>
 								<? } ?>
